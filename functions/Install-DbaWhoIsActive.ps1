@@ -213,6 +213,7 @@ function Install-DbaWhoIsActive {
 					$allprocedures = ($server.Query($allprocedures_query, $Database)).Name
 				}
 				catch {
+					#Taiob-need to work here
 					Stop-Function -Message "Failed to install stored procedure." -ErrorRecord $_ -Continue -Target $instance
 				}
 				foreach ($batch in $batches) {
